@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Android_Demo\\TempControlView\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "D:\\Android_Demo\\TempControlView\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android_Demo\\TempControlView\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\btn_rotate_shadow.png",
+        "source": "D:\\Android_Demo\\TempControlView\\app\\src\\main\\res\\mipmap-xhdpi\\btn_rotate_shadow.png"
+    },
+    {
+        "merged": "D:\\Android_Demo\\TempControlView\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\btn_rotate.png",
+        "source": "D:\\Android_Demo\\TempControlView\\app\\src\\main\\res\\mipmap-xhdpi\\btn_rotate.png"
+    }
+]
