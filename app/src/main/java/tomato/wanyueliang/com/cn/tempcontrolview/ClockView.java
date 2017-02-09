@@ -10,11 +10,13 @@ import android.graphics.Paint;
 import android.graphics.PaintFlagsDrawFilter;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 /**
  * Created           :Herve on 2017/2/7.
@@ -58,6 +60,7 @@ public class ClockView extends View {
     private float minuteRotate;
     /*秒针的位置角度*/
     private float secondRotate;
+    private String TAG = getClass().getSimpleName();
 
     public ClockView(Context context) {
         this(context, null);
@@ -118,6 +121,8 @@ public class ClockView extends View {
         hourHand = dialRadius - halfWidth * 2 / 5;
         minuteHand = dialRadius - halfWidth / 4;
         secondHand = dialRadius;
+
+        start();
     }
 
     @Override
@@ -183,13 +188,13 @@ public class ClockView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (!isStart) {
-            isStart = true;
-            start();
-        } else {
-            isStart = false;
-            stop();
-        }
+//        if (!isStart) {
+//            isStart = true;
+//            start();
+//        } else {
+//            isStart = false;
+//            stop();
+//        }
 
         return super.onTouchEvent(event);
     }
@@ -218,6 +223,28 @@ public class ClockView extends View {
     };
 
     private void start() {
+
+        Calendar c = Calendar.getInstance();//可以对每个时间域单独修改
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+        int second = c.get(Calendar.SECOND);
+
+        secondRotate = (float) second / 60 * 360;
+
+        minuteRotate = (float) minute / 60 * 360;
+
+        hourRotate = (float) hour / 12 * 360 + minuteRotate / 12;
+
+        lastCurrent = hourRotate;
+
+        Log.i(TAG, "start: hour=" + hour);
+        Log.i(TAG, "start: minute" + minute);
+        Log.i(TAG, "start: second" + second);
+
+        Log.i(TAG, "start: secondRotate" + secondRotate);
+        Log.i(TAG, "start: minuteRotate" + minuteRotate);
+        Log.i(TAG, "start: hourRotate" + hourRotate);
+
         postDelayed(runnable, 0);
     }
 
