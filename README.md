@@ -1,1 +1,1 @@
-![image text](https://github.com/lijianyou-Herve/TempControlView/blob/master/art/device-2017-02-07-182658.png)
+![image text](https://github.com/lijianyou-Herve/MagicNote/blob/master/app/src/main/assets/QQ%E5%9B%BE%E7%89%8720170222175507.png)
